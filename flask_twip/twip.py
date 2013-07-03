@@ -231,6 +231,7 @@ class Twip(object):
             else:
                 data = twitter.handle_unknown_response()
         except OAuthException as e:
+            raise e
             return redirect(url_for('twip.index'))
         twitter.free_request_token()
 
